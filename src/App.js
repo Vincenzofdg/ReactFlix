@@ -1,17 +1,15 @@
-import React from 'react';
-import { HashRouter as Router, Routes , Route } from 'react-router-dom';
-import Provider from './context/Provider';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Provider from "./data/Provider";
+
+import Home from "./pages/Home";
 
 function App() {
   return (
     <Provider>
-      <Router>
-        <Routes>
-          <Route exact path="/" element={ <Home /> } />
-          {/* <Route exact path="/me" element={ <Me /> } />
-          <Route path="/projects" element={ <Projects />} /> */}
-        </Routes>
-      </Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </Provider>
   );
 }
