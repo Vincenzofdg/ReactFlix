@@ -1,16 +1,13 @@
 {
   "files": {
     "main.css": "/reactflix/static/css/main.ffc65a24.css",
-    "main.js": "/reactflix/static/js/main.53b62f51.js",
-    "static/media/avatar.jpg": "/reactflix/static/media/avatar.6e7f1f2a457275a7ff48.jpg",
-    "static/media/logo.png": "/reactflix/static/media/logo.f4070143e1f521da82a1.png",
-    "static/media/bell.png": "/reactflix/static/media/bell.87adc9041937f3e2fafc.png",
+    "main.js": "/reactflix/static/js/main.1e07df8e.js",
     "index.html": "/reactflix/index.html",
     "main.ffc65a24.css.map": "/reactflix/static/css/main.ffc65a24.css.map",
-    "main.53b62f51.js.map": "/reactflix/static/js/main.53b62f51.js.map"
+    "main.1e07df8e.js.map": "/reactflix/static/js/main.1e07df8e.js.map"
   },
   "entrypoints": [
     "static/css/main.ffc65a24.css",
-    "static/js/main.53b62f51.js"
+    "static/js/main.1e07df8e.js"
   ]
 }
