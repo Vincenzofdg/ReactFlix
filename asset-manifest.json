@@ -1,13 +1,16 @@
 {
   "files": {
     "main.css": "/ReactFlix/static/css/main.ffc65a24.css",
-    "main.js": "/ReactFlix/static/js/main.7f3fad40.js",
+    "main.js": "/ReactFlix/static/js/main.8f3eae1c.js",
+    "static/media/avatar.jpg": "/ReactFlix/static/media/avatar.6e7f1f2a457275a7ff48.jpg",
+    "static/media/logo.png": "/ReactFlix/static/media/logo.f4070143e1f521da82a1.png",
+    "static/media/bell.png": "/ReactFlix/static/media/bell.87adc9041937f3e2fafc.png",
     "index.html": "/ReactFlix/index.html",
     "main.ffc65a24.css.map": "/ReactFlix/static/css/main.ffc65a24.css.map",
-    "main.7f3fad40.js.map": "/ReactFlix/static/js/main.7f3fad40.js.map"
+    "main.8f3eae1c.js.map": "/ReactFlix/static/js/main.8f3eae1c.js.map"
   },
   "entrypoints": [
     "static/css/main.ffc65a24.css",
-    "static/js/main.7f3fad40.js"
+    "static/js/main.8f3eae1c.js"
   ]
 }
