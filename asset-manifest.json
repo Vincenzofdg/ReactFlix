@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/reactflix/static/css/main.ffc65a24.css",
-    "main.js": "/reactflix/static/js/main.1e07df8e.js",
-    "index.html": "/reactflix/index.html",
-    "main.ffc65a24.css.map": "/reactflix/static/css/main.ffc65a24.css.map",
-    "main.1e07df8e.js.map": "/reactflix/static/js/main.1e07df8e.js.map"
+    "main.css": "/ReactFlix/static/css/main.ffc65a24.css",
+    "main.js": "/ReactFlix/static/js/main.7f3fad40.js",
+    "index.html": "/ReactFlix/index.html",
+    "main.ffc65a24.css.map": "/ReactFlix/static/css/main.ffc65a24.css.map",
+    "main.7f3fad40.js.map": "/ReactFlix/static/js/main.7f3fad40.js.map"
   },
   "entrypoints": [
     "static/css/main.ffc65a24.css",
-    "static/js/main.1e07df8e.js"
+    "static/js/main.7f3fad40.js"
   ]
 }
