@@ -1,35 +1,4 @@
-# name: Github Pages Deploy
-
-# on:
-#   push:
-#     branches:
-#       - master
-
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
-
-#     permissions:
-#       contents: write
-
-#     strategy:
-#       matrix:
-#         node-version: [16.x]
-
-#     steps:
-#       - name: Checkout 
-#         uses: actions/checkout@v2
-
-#       - name: Install and Build
-#         run: npm install && npm run build
-
-#       - name: Deploy
-#         uses: JamesIves/github-pages-deploy-action@4.1.1
-#         with:
-#           branch: gh-pages
-#           folder: build
-
-name: deploy
+name: Github Pages Deploy
 
 on:
   push:
@@ -38,22 +7,53 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
-    
+    runs-on: ubuntu-latest
+
     permissions:
       contents: write
-      
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: Checkout 
+        uses: actions/checkout@v2
+
+      - name: Install and Build
+        run: npm install && npm run build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
-          node-version: '16.x'
-      - name: Build web-app
-        run: |
-          npm ci
-          npm run build
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          branch: gh-pages
+          folder: build
+
+# name: deploy
+
+# on:
+#   push:
+#     branches:
+#       - master
+
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-18.04
+    
+#     permissions:
+#       contents: write
+      
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: actions/setup-node@v1
+#         with:
+#           node-version: '16.x'
+#       - name: Build web-app
+#         run: |
+#           npm ci
+#           npm run build
+#       - name: Deploy to gh-pages
+#         uses: peaceiris/actions-gh-pages@v3
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
+#           publish_dir: ./build
