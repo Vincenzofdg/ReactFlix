@@ -1,6 +1,8 @@
 ## Description:
 Project developed movies and tv shows trailers where user can search his favorite movie, or tv show, and watch it's trailer.
 
+- [API The Movie DB Doc](https://www.themoviedb.org/documentation/api/discover).
+
 ## Starting Project:
 1. Cloning the repository
 -  `git clone git@github.com:Vincenzofdg/ReactFlix.git`
@@ -13,7 +15,8 @@ Project developed movies and tv shows trailers where user can search his favorit
 
 ## Dependencies Used:
 1. Styled Components (_npm install styled-components_);
-2. React Router (_npm install react-router-dom_)
+2. React Router (_npm install react-router-dom_);
+3. Axios (_npm install axios_).
 
 ## Deploy With GitHub Actions:
 1. Create the build.yml file: `github/workflows/build.yml`;
