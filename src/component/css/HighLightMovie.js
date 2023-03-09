@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const css = styled.div`
   width: 100%;
-  height: 60%;
+  height: 57%;
   padding: 40px;
 
   background-repeat: no-repeat;
@@ -15,7 +15,6 @@ const css = styled.div`
   justify-content: end;
 
   .info {
-    background: red;
     width: 30%;
     height: 25%;
 
@@ -25,19 +24,61 @@ const css = styled.div`
     align-itens: center;
     text-align: center;
 
-    .watch-btn {
-      background-color: white;
-      border: none;
-      font-weight: bolder;
-      border-radius: 10px;
+    h1 {
+      font-size: 26px;
+    }
 
-      width: 160px;
-      height: 70px;
+    .btns {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-itens: center;
 
-      text-decoration: none;
-      font-size: 16px;
-      margin: 4px 2px;
-      cursor: pointer;
+      .btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+
+        border: none;
+        border-radius: 7px;
+        height: 45px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+
+      .watch-btn {
+        background-color: white;
+        color: black;
+        width: 130px;
+        :hover {
+          background-color: rgb(199, 199, 199);
+        }
+      }
+
+      .info-btn {
+        background-color: rgb(0, 0, 0, 0.9);
+        color: white;
+        width: 230px;
+
+        :hover {
+          background-color: rgb(0, 0, 0, 0.5);
+        }
+      }
+
+      p {
+        font-size: 18px;
+        font-weight: bolder;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      #icon {
+        width: 30px;
+        height: 30px;
+      }
     }
   }
 `;

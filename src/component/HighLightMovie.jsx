@@ -1,5 +1,8 @@
 import React from 'react';
+// Style
 import HighLightMovieCSS from './css/HighLightMovie'
+import playIcon from '../assets/Play.png';
+import infoIcon from '../assets/Info.png';
 
 
 function HighLightMovie({ movie }) {
@@ -8,20 +11,26 @@ function HighLightMovie({ movie }) {
 
 
   const btn = (text, _nav) => {
-    return(
-      <button
-        type="submit"
-        className='watch-btn'
+    const validation = text === 'Assistir';
+    return (
+      <div
+        className={ `btn ${validation ? 'watch' : 'info'}-btn`}
       >
-        { text }
-      </button>)
+        { !!validation && (<img id='icon' src={playIcon} />) }
+        { !validation && (<img id='icon' src={infoIcon} />) }
+        <p>{ text }</p>
+      </div>
+    )
   }
 
   return (
     <HighLightMovieCSS style={{backgroundImage: `url(${cover})`}}>
       <div className='info'>
         <h1>{title}</h1>
-        {btn('Assistir')}
+        <div className='btns'>
+          {btn('Assistir')}
+          {btn('Mais Informacoes')}
+        </div>
       </div>
     </HighLightMovieCSS>
   );

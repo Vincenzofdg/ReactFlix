@@ -16,7 +16,8 @@ function Home() {
             const checkAPI = cinema.length > 0 && popular.length > 0;
             const loadingTime = 1000;
             if (checkAPI) {
-                  SetHighLight(popular[0])
+                  const randomNumber = Math.floor(Math.random() * popular.length) + 1
+                  SetHighLight(popular[randomNumber])
                   setTimeout(() => SetLoading(false), loadingTime);
             }
       }, [cinema, popular])
@@ -28,6 +29,7 @@ function Home() {
                   !!loading ? (<h1>Loading</h1>) : (
                         <HomeCSS>
                               <HighLightMovie movie={ highLight } />
+                              {/* <MoviesCarrosel movies={ popular } /> */}
                         </HomeCSS>
                   )
             }
