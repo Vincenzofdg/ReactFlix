@@ -1,30 +1,36 @@
-import React, {useCallback, useEffect, useState} from "react";
-// API
-import { getMovies } from "../services/themoviedb";
+import React, {useContext, useState, useEffect} from "react";
+import Context from "../data/Context";
 // Components
 import Header from "../component/Header";
-import MoviesCard from "../component/MoviesCard";
+import HighLightMovie from "../component/HighLightMovie";
+// import MoviesCard from "../component/MoviesCard";
 // Style
 import HomeCSS from "./css/Home";
 
 function Home() {
-      const [movies, SetMovies] = useState([]);
+      const {cinema, topMovies: popular} = useContext(Context);
+      const [loading, SetLoading] = useState(true);
+      const [highLight, SetHighLight] = useState({})
 
-      const moviesAPI = useCallback(async () => {
-            const result = await getMovies();
-            SetMovies(result)
-      }, [])
-      
       useEffect(() => {
-            moviesAPI();
-      }, [moviesAPI])
+            const checkAPI = cinema.length > 0 && popular.length > 0;
+            const loadingTime = 1000;
+            if (checkAPI) {
+                  SetHighLight(popular[0])
+                  setTimeout(() => SetLoading(false), loadingTime);
+            }
+      }, [cinema, popular])
 
       return (
             <>
                   <Header />
-                  <HomeCSS>
-                        { movies.map(movie => <MoviesCard key={ movie.id } info={ movie } /> ) }
-                  </HomeCSS>
+            {
+                  !!loading ? (<h1>Loading</h1>) : (
+                        <HomeCSS>
+                              <HighLightMovie movie={ highLight } />
+                        </HomeCSS>
+                  )
+            }
             </>
       );
 }
