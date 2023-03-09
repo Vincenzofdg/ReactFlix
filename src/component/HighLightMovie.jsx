@@ -16,8 +16,8 @@ function HighLightMovie({ movie }) {
       <div
         className={ `btn ${validation ? 'watch' : 'info'}-btn`}
       >
-        { !!validation && (<img id='icon' src={playIcon} />) }
-        { !validation && (<img id='icon' src={infoIcon} />) }
+        { !!validation && (<img id='icon' src={playIcon} alt="Play" />) }
+        { !validation && (<img id='icon' src={infoIcon} alt="Info" />) }
         <p>{ text }</p>
       </div>
     )
