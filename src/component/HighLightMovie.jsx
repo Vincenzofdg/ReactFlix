@@ -16,7 +16,6 @@ function HighLightMovie({ movie, timer }) {
       <div
         className={ `btn ${validation ? 'watch' : 'info'}-btn`}
         key={ text + '-key' }
-        onClick={() => console.log(title)}
       >
         { !!validation && (<img id='icon' src={playIcon} alt="Play" />) }
         { !validation && (<img id='icon' src={infoIcon} alt="Info" />) }

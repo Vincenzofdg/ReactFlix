@@ -1,11 +1,11 @@
 import React from 'react';
 import HeaderCSS from './css/Header'
 
-import logo from '../images/logo.png';
-import search from '../images/search.png';
-import bell from '../images/bell.png';
-import avatar from '../images/avatar.jpg';
-import arrow from '../images/arrow.png';
+import logo from '../assets/Logo.png';
+import search from '../assets/Search.png';
+import bell from '../assets/Bell.png';
+import avatar from '../assets/Avatar.jpg';
+import arrow from '../assets/Arrow-Menu.png';
 
 function Header() {
       const menuItens = () => {
