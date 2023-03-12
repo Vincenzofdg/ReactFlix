@@ -10,15 +10,24 @@ import HomeCSS from "./css/Home";
 function Home() {
       const {cinema, topMovies: popular} = useContext(Context);
       const [loading, SetLoading] = useState(true);
-      const [highLight, SetHighLight] = useState({})
+      const [top10Movies, setTop10Movies] = useState({});
+      const [timer, SetTimer] = useState(0)
 
       useEffect(() => {
+            const loadTime = 1000;
+            const nextBannerTime = 5000
             const checkAPI = cinema.length > 0 && popular.length > 0;
-            const loadingTime = 1000;
+
             if (checkAPI) {
-                  const randomNumber = Math.floor(Math.random() * popular.length) + 1
-                  SetHighLight(popular[randomNumber])
-                  setTimeout(() => SetLoading(false), loadingTime);
+                  const top10 = Array.from({length: 11}, (elem, index) => elem = popular[index])
+                  setTop10Movies(top10)
+                  let i = 0;
+                  setInterval(() => {
+                        i = i > 10 ? 0 : i;
+                        SetTimer(i)
+                        i++
+                  }, nextBannerTime)
+                  setTimeout(() => SetLoading(false), loadTime);
             }
       }, [cinema, popular])
 
@@ -28,8 +37,17 @@ function Home() {
             {
                   !!loading ? (<h1>Loading</h1>) : (
                         <HomeCSS>
-                              <HighLightMovie movie={ highLight } />
-                              {/* <MoviesCarrosel movies={ popular } /> */}
+                              <div className="carousel-auto">
+                                    <div className="banners">
+                                          {top10Movies.map((movie, i) => (
+                                                      <HighLightMovie 
+                                                            key={'top-' + i} 
+                                                            movie={ movie }
+                                                            timer={ timer } 
+                                                      />)
+                                                )}
+                                    </div>
+                              </div>
                         </HomeCSS>
                   )
             }

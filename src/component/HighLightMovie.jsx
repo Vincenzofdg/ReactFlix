@@ -5,16 +5,18 @@ import playIcon from '../assets/Play.png';
 import infoIcon from '../assets/Info.png';
 
 
-function HighLightMovie({ movie }) {
+function HighLightMovie({ movie, timer }) {
   const { backdrop_path, title } = movie;
   const cover = "https://image.tmdb.org/t/p/w1280" + backdrop_path;
 
-
   const btn = (text, _nav) => {
-    const validation = text === 'Assistir';
+    const validation = text === 'Watch';
+
     return (
       <div
         className={ `btn ${validation ? 'watch' : 'info'}-btn`}
+        key={ text + '-key' }
+        onClick={() => console.log(title)}
       >
         { !!validation && (<img id='icon' src={playIcon} alt="Play" />) }
         { !validation && (<img id='icon' src={infoIcon} alt="Info" />) }
@@ -24,12 +26,15 @@ function HighLightMovie({ movie }) {
   }
 
   return (
-    <HighLightMovieCSS style={{backgroundImage: `url(${cover})`}}>
+    <HighLightMovieCSS style={{ 
+        backgroundImage: `url(${cover})`, 
+        transform: `translateX(-${timer}00%)`,
+        transition: 'transform 0.5s ease-in-out',
+      }}>
       <div className='info'>
         <h1>{title}</h1>
         <div className='btns'>
-          {btn('Assistir')}
-          {btn('Mais Informacoes')}
+          { ['Watch', 'More Info'].map(text => btn(text)) }
         </div>
       </div>
     </HighLightMovieCSS>

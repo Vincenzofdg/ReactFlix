@@ -1,18 +1,15 @@
 import styled from "styled-components";
 
 const css = styled.div`
-  width: 100%;
-  height: 57%;
+  width: 1350px;
   padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
 
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  background-size: 100% 100%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
 
   .info {
     width: 30%;

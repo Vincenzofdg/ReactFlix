@@ -8,17 +8,23 @@ import avatar from '../images/avatar.jpg';
 import arrow from '../images/arrow.png';
 
 function Header() {
+      const menuItens = () => {
+            const topics = ['Home', 'Series', 'Films', 'Minha Lista'];
+            return topics.map((topic) => (
+                  <li
+                        key={topic + '-key'}
+                  >
+                        { topic }
+                  </li>
+            ));
+      }
+
       return (
             <HeaderCSS>
                   <div className='container'>
                         <img src={ logo } className='logo' alt="Logo" />
                         <ul className='navegation-menu'>
-                              <li>Inicio</li>
-                              <li>Series</li>
-                              <li>Filmes</li>
-                              <li>Bombando</li>
-                              <li>Minha lista</li>
-                              <li>Navegar por idiomas</li>
+                              { menuItens() }
                         </ul>
 
                         <div className='auxiliar-menu'>

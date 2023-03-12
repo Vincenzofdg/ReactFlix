@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const css = styled.div`
-  height: 7%;
+  height: 8vh;
   background: black;
 
   .container {
